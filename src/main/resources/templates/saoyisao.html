@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>扫描二维码</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=Yes" />
+    <script src="~/js/jquery1.7.2.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+<body>
+<input type="button" class="test" value="微信扫一扫"/>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+
+
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: 'wx9fdab1409983f932', // 必填，公众号的唯一标识
+            timestamp: '1601280593290', // 必填，生成签名的时间戳    <%= Html.Encode(ViewData["timestamp" ]) %>
+            nonceStr: 'szG04u32', // 必填，生成签名的随机串
+            signature:'@ViewBag.signature', // 必填，签名
+            jsApiList: ['scanQRCode'] // 必填，需要使用的JS接口列表, 这里只需要调用扫一扫
+    });
+
+
+        $(".test").click(function () {
+            var ua = navigator.userAgent.toLowerCase();
+            var isWeixin = ua.indexOf('micromessenger') !== -1;
+            if (!isWeixin) {
+                alert('请用微信打开连接，才可使用扫一扫');
+            }
+
+            wx.scanQRCode({
+                needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+                scanType: ["qrCode"], // 可以指定扫二维码还是一维码，默认二者都有
+                success: function (res) {
+                    // 扫码成功，跳转到二维码指定页面（res.resultStr为扫码返回的结果）
+                    //  location.href = res.resultStr;
+                    var scan = res.resultStr;
+                    alert(scan);
+
+                },
+                error: function (res) {
+                    if (res.errMsg.indexOf('function_not_exist') > 0) {
+                        alert('当前版本过低，请进行升级');
+                    }
+                }
+            });
+        });
+    });
+
+</script>

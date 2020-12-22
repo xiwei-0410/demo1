@@ -1,0 +1,200 @@
+17:29:56.834 [main] ERROR o.s.b.SpringApplication - [reportFailure,837] - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@66d3eec0 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-info.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@66d3eec0 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@32c8e539 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-info.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@32c8e539 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:317)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.wxw.DemoApplication.main(DemoApplication.java:12)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@66d3eec0 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-info.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@66d3eec0 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@32c8e539 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-info.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@32c8e539 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:311)
+	... 14 common frames omitted
+17:37:59.686 [main] ERROR o.s.b.SpringApplication - [reportFailure,837] - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@568ff82 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-user.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@568ff82 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@75f95314 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-user.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@75f95314 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:317)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.wxw.DemoApplication.main(DemoApplication.java:12)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@568ff82 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-user.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@568ff82 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@75f95314 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-user.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@75f95314 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:311)
+	... 14 common frames omitted
+17:38:37.946 [main] ERROR o.s.b.SpringApplication - [reportFailure,837] - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@45ca843 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-user.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@45ca843 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4b6690c0 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-user.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4b6690c0 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:317)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.wxw.DemoApplication.main(DemoApplication.java:12)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@45ca843 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-user.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@45ca843 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4b6690c0 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-user.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4b6690c0 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:311)
+	... 14 common frames omitted
+17:39:24.493 [main] ERROR o.s.b.SpringApplication - [reportFailure,837] - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@186f8716 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-info.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@186f8716 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6c45ee6e - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-info.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6c45ee6e - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:317)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.wxw.DemoApplication.main(DemoApplication.java:12)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@186f8716 - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-info.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@186f8716 - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6c45ee6e - Missing integer token, that is %i, in FileNamePattern [log.path_IS_UNDEFINED/sys-info.%d{yyyy-MM-dd}.log]
+ERROR in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6c45ee6e - See also http://logback.qos.ch/codes.html#sat_missing_integer_token
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:311)
+	... 14 common frames omitted
+17:42:55.511 [main] ERROR o.s.b.SpringApplication - [reportFailure,837] - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:317)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.wxw.DemoApplication.main(DemoApplication.java:12)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:50 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 11
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:311)
+	... 14 common frames omitted
+17:43:18.361 [main] ERROR o.s.b.SpringApplication - [reportFailure,837] - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:48 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 9
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:48 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 9
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:317)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.wxw.DemoApplication.main(DemoApplication.java:12)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:48 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 9
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:48 - RuntimeException in Action for tag [property] java.lang.StringIndexOutOfBoundsException: String index out of range: 9
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:311)
+	... 14 common frames omitted

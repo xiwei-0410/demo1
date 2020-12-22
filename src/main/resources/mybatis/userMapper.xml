@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxw.suaggerDemo.mapper.UserMapper">
+
+    <resultMap id="userState" type="com.wxw.suaggerDemo.model.User">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="phone" column="phone"/>
+        <result property="sex" column="sex"/>
+        <result property="age" column="age"/>
+        <result property="imgUrl" column="imgUrl"/>
+        <result property="gradeId" column="grade_id"/>
+        <result property="isDeal" column="isDeal"/>
+    </resultMap>
+
+    <resultMap id="gradeInfo" type="com.wxw.suaggerDemo.model.GradeInfo">
+        <result property="id" column="id"/>
+        <result property="grade" column="grade"/>
+        <result property="delFlag" column="del_flag"/>
+    </resultMap>
+
+    <select id="getUserAll" resultMap="userState">
+        select * from wxw_user where 1=1 and isDeal=0
+    </select>
+
+    <select id="getUserById" parameterType="String" resultMap="userState">
+        select * from wxw_user where 1=1 and isDeal=0 and id =#{id}
+    </select>
+
+    <insert id="save" parameterType="com.wxw.suaggerDemo.model.User" >
+        insert into wxw_user (name,phone,sex,age,imgUrl,grade_id,isDeal)values (#{name},#{phone},#{sex},#{age},#{imgUrl},#{gradeId},0)
+    </insert>
+
+    <update id="update" parameterType="map">
+        update wxw_user
+        <set>
+            <if test="name != null and name != ''">`name`=#{name},</if>
+            <if test="phone != null and phone != ''">phone=#{phone},</if>
+            <if test="sex != null and sex != ''">sex=#{sex},</if>
+            <if test="age != null and age != ''">age=#{age}</if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <update id="delete" parameterType="String">
+        update wxw_user set isDeal=1 where id=#{id}
+    </update>
+
+    <insert id="addGrade" parameterType="gradeInfo" keyProperty="id" useGeneratedKeys="true">
+        insert into wxw_grade
+        (
+        <if test="grade != null and grade != ''">grade,</if>
+        del_flag
+        )values
+        (
+        <if test="grade != null and grade != ''">#{grade},</if>
+        0
+        )
+    </insert>
+
+
+</mapper>
