@@ -2,10 +2,7 @@ package com.wxw.ceshimanchine;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.wxw.util.Base64Util;
-import com.wxw.util.GetRequestJsonUtils;
-import com.wxw.util.HttpUtils;
-import com.wxw.util.MD5;
+import com.wxw.util.*;
 import okhttp3.*;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -35,6 +32,19 @@ public class Manchine {
         String url = "http://192.168.31.10:8090/setIdentifyCallBack";
         String parame ="pass=123456&callbackUrl=http://192.168.31.126:8080/api/machine/callback";
         System.out.println(HttpUtils.HttpPost(url,parame));
+    }
+
+    @RequestMapping("ceshiSend")
+    @ResponseBody
+    public Object ceshiSend(){
+        try {
+            SendDemo.send();
+        } catch (IOException e) {
+            System.out.println("发送信息报错："+e);
+        } catch (InterruptedException e) {
+            System.out.println("发送信息报错："+e);
+        }
+        return 0;
     }
 
     /**

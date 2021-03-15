@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * @author wxw
  */
+
 @RequestMapping("/weixin/scan/")
 @Controller
 public class weixnTest {

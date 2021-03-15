@@ -12,6 +12,7 @@ import javax.websocket.server.ServerEndpointConfig;
  * 以websocketConfig.java注册的bean是由自己管理的，需要使用配置托管给spring管理
  * @author wxw
  */
+
 public class MySpringConfigurator extends ServerEndpointConfig.Configurator implements ApplicationContextAware {
 
     private static volatile BeanFactory context;

@@ -4,9 +4,14 @@ import org.apache.catalina.core.ApplicationContext;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static java.util.regex.Pattern.*;
 
 public class Tset {
     @Autowired
@@ -17,8 +22,18 @@ public class Tset {
         System.out.println(context);
     }
 
-    public static void main(String[] args) throws ParseException {
-        System.out.println(dateToWeek("2020-12-21"));
+    public static void main(String[] args) {
+        byte[] readBuffer = new byte[1024*1024];
+        try {
+            String flightInfo=new String(readBuffer,"UTF-8");
+            int length=flightInfo.length();
+            System.out.println(length);
+            flightInfo=flightInfo.trim();//通过trim去掉空字符
+            int length2=flightInfo.length();
+            System.out.println(length2);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
     static void pong() {
