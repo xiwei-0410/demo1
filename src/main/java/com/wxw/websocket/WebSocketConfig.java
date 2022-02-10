@@ -19,15 +19,15 @@ public class WebSocketConfig  {
      * @return
      */
 
-//    @Bean
-//    public ServerEndpointExporter serverEndpointExporter() {
-//        return new ServerEndpointExporter();
-//    }
-//
-//
-//    @Bean
-//    public MySpringConfigurator mySpringConfigurator() {
-//        return new MySpringConfigurator();
-//    }
+    @Bean
+    public ServerEndpointExporter serverEndpointExporter() {
+        return new ServerEndpointExporter();
+    }
+
+
+    @Bean
+    public MySpringConfigurator mySpringConfigurator() {
+        return new MySpringConfigurator();
+    }
 }
 

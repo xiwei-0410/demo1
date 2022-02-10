@@ -60,5 +60,9 @@
         )
     </insert>
 
+    <select id="ceshi" parameterType="java.util.Map" resultType="int">
+        select count(*) from  wxw_user where phone = #{phone} and `name`=#{name}
+    </select>
+
 
 </mapper>

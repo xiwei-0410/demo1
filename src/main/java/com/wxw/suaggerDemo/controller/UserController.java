@@ -96,7 +96,10 @@ public class UserController {
     @RequestMapping("ceshiAop")
     @ResponseBody
     public Object ceshiAop(User user){
-        return service.addUserAndGrade(user);
+        Map<String,Object> map = new HashMap<>();
+        map.put("phone","1888888888");
+        map.put("name","张无忌");
+        return service.ceshi(map);
     }
 
 

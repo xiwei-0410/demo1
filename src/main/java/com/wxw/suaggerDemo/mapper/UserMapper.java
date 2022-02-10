@@ -21,4 +21,7 @@ public interface UserMapper {
     int delete(String id);
 
     int addGrade(GradeInfo gradeInfo);
+
+
+    int ceshi(Map<String,Object> map);
 }

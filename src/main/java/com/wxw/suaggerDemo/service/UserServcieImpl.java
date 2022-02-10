@@ -3,11 +3,14 @@ package com.wxw.suaggerDemo.service;
 import com.wxw.suaggerDemo.mapper.UserMapper;
 import com.wxw.suaggerDemo.model.GradeInfo;
 import com.wxw.suaggerDemo.model.User;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -47,11 +50,24 @@ public class UserServcieImpl implements UserService{
     @Override
     @Transactional(rollbackFor =Exception.class)//未检查异常
     public int addUserAndGrade(User user) {
-        GradeInfo gradeInfo = new GradeInfo();
-        gradeInfo.setGrade("一年级");
-        mapper.addGrade(gradeInfo);
-        System.out.println(gradeInfo.getId());
-        user.setGradeId(gradeInfo.getId());
-        return mapper.save(user);
+        int num = 0;
+        try{
+            GradeInfo gradeInfo = new GradeInfo();
+            gradeInfo.setGrade("一年级");
+            mapper.addGrade(gradeInfo);
+            System.out.println(gradeInfo.getId());
+            user.setGradeId(gradeInfo.getId());
+            num =  mapper.save(user);
+        }catch (Exception e){
+            num = 2;
+            System.out.println("不操作======");
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+        }
+        return num;
+    }
+
+    @Override
+    public int ceshi(Map<String, Object> map) {
+        return mapper.ceshi(map);
     }
 }

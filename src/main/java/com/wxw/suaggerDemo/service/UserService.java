@@ -16,4 +16,6 @@ public interface UserService {
     int delete(String id);
 
     int addUserAndGrade(User user);
+
+    int ceshi(Map<String,Object> map);
 }

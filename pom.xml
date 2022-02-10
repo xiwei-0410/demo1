@@ -184,27 +184,54 @@
 
         <!-- https://mvnrepository.com/artifact/com.aspose/aspose-cells -->
         <dependency>
-            <groupId>com.aspose</groupId>
-            <artifactId>aspose-cells</artifactId>
-            <version>8.5.2</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
-            <version>4.1.2</version>
+            <version>3.9</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-scratchpad</artifactId>
+            <version>3.9</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>4.1.2</version>
+            <version>3.9</version>
+        </dependency>
+
+
+        <!--<dependency>-->
+            <!--<groupId>e-iceblue</groupId>-->
+            <!--<artifactId>spire.doc</artifactId>-->
+            <!--<version>4.10.9</version>-->
+        <!--</dependency>-->
+
+
+        <!-- https://mvnrepository.com/artifact/org.docx4j/docx4j -->
+        <!--<dependency>-->
+            <!--<groupId>org.docx4j</groupId>-->
+            <!--<artifactId>docx4j</artifactId>-->
+            <!--<version>3.3.6</version>-->
+        <!--</dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.0.19</version>
         </dependency>
 
 
 
 
     </dependencies>
+
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>com.e-iceblue</id>-->
+            <!--<url>https://repo.e-iceblue.cn/repository/maven-public/</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
 
     <build>
         <plugins>
