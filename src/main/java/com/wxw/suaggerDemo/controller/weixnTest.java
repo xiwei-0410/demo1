@@ -27,12 +27,6 @@ public class weixnTest {
         return "webSocket.html";
     }
 
-    @RequestMapping("ceshi")
-    @ResponseBody
-    public Object ceshi(){
-        websocket.onMessage("cececececececececece");
-        return 50;
-    }
 
     @Scheduled(cron = "0 0 0/5 * * ?")
     @Scheduled(cron = "0 30 2/5 * * ?")
