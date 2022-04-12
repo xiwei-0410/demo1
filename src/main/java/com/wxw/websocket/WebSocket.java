@@ -17,25 +17,23 @@ import java.util.concurrent.CopyOnWriteArraySet;
  */
 
 @Component
-@ServerEndpoint(value = "/websocket/{sendUser}",configurator = MySpringConfigurator.class)
+@ServerEndpoint(value = "/websocket/{sendUser}")
 public class WebSocket {
-/**
+    /**
      * 静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
      */
-
     private static int onlineCount = 0;
 
-/**
+    /**
      * concurrent包的线程安全Set，用来存放每个客户端对应的MyWebSocket对象。
      * 若要实现服务端与单一客户端通信的话，可以使用Map来存放，其中Key可以为用户标识
      */
 
     private static ConcurrentHashMap<Integer,WebSocket> webSocketMap = new ConcurrentHashMap<Integer,WebSocket>();
 
-/**
+    /**
      * 与某个客户端的连接会话，需要通过它来给客户端发送数据
      */
-
     private Session session;
 
     /**
@@ -61,15 +59,14 @@ public class WebSocket {
         this.sendUser = sendUser;
         //在线数加1
         addOnlineCount();
-        System.out.println("有新连接加入！当前在线人数为" + getOnlineCount()+ " 当前session是" + session.hashCode());
+        System.out.println("当前在线人数为" + getOnlineCount()+ " 当前session是" + session.hashCode()+"当前用户=="+sendUser );
         //加入webSocket中
         webSocketMap.put(sendUser,this);
         // 刷新在线人数
-        for (WebSocket chat : webSocketMap.values()) {
-            //使用if判断是要统计人数还是发送消息
-            chat.sendMessage(session,getOnlineCount() + "");
-        }
-
+//        for (WebSocket chat : webSocketMap.values()) {
+//            //使用if判断是要统计人数还是发送消息
+//            chat.sendMessage(session,getOnlineCount() + "");
+//        }
     }
 
 /**
@@ -83,28 +80,25 @@ public class WebSocket {
         //在线数减1
         subOnlineCount();
         System.out.println("有一连接关闭！当前在线人数为" + getOnlineCount());
-        for (WebSocket chat : webSocketMap.values()) {
-            //说明当前的session已经被关闭
-            if(chat.session != this.session){
-                chat.sendMessage(session,getOnlineCount() + "");
-            }
-        }
+//        for (WebSocket chat : webSocketMap.values()) {
+//            //说明当前的session已经被关闭
+//            if(chat.session != this.session){
+//                chat.sendMessage(session,getOnlineCount() + "");
+//            }
+//        }
     }
 
-/**
+    /**
      * 收到客户端消息后调用的方法
-     *
      * @param message 客户端发送过来的消息
      */
-
     @OnMessage
     public void onMessage(String message,Session session) throws IOException {
         JSONObject jsonOject = JSONObject.parseObject(message);
         sendUser = Integer.parseInt(jsonOject.getString("sendUser"));
         toUser = Integer.parseInt(jsonOject.getString("toUser"));
         message = jsonOject.getString("message");
-        message = "来自:" + sendUser + "用户发给" + toUser + "用户的信息:" + message + " \r\n";
-        System.out.println("来自客户端的消息:" + message);
+        System.out.println("来自:" + sendUser + "用户发给" + toUser + "用户的信息:" + message );
 
         // 得到接收人
         WebSocket user = webSocketMap.get(toUser);
@@ -113,7 +107,7 @@ public class WebSocket {
             System.out.println("信息已保存到数据库");
             return;
         }
-        user.sendMessage(session,message);
+        user.sendMessage(session,message + " \r");
     }
 
     /**
@@ -134,7 +128,6 @@ public class WebSocket {
      */
     public void sendMessage(Session session,String message) throws IOException {
         //阻塞式（同步）
-        System.out.println(session.hashCode());
         synchronized (session) {
             this.session.getBasicRemote().sendText(message);
         }

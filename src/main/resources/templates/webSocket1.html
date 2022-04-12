@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>测试websocket</title>
+    <title>测试</title>
 </head>
 <body>
-    账　号:<input type="text" name="sendUser" id="sendUser"/>
+    账　号111111111:<input type="text" name="sendUser" id="sendUser"/>
     <input type="button" id="login" value="登录" onclick="login()"/>
     <input type="button" onclick="closeWebSocket()"  value="退出"/>
 
@@ -32,12 +32,12 @@
 
         //连接发生错误的回调方法
         websocket.onerror = function () {
-            console.log("WebSocket连接发生错误")
+            //setMessageInnerHTML("WebSocket连接发生错误");
         };
 
         //连接成功建立的回调方法
         websocket.onopen = function () {
-            console.log("WebSocket连接成功")
+            //setMessageInnerHTML("WebSocket连接成功");
         }
 
         //接收到消息的回调方法
@@ -47,7 +47,7 @@
 
         //连接关闭的回调方法
         websocket.onclose = function () {
-            console.log("WebSocket连接关闭")
+            //setMessageInnerHTML("WebSocket连接关闭");
         }
 
         //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
@@ -72,6 +72,7 @@
 
     //将消息显示在网页上
     function setMessageInnerHTML(innerHTML){
+        console.log(innerHTML);
         document.getElementById('showMsg').innerHTML += innerHTML;
     }
 

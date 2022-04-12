@@ -27,6 +27,11 @@ public class weixnTest {
         return "webSocket.html";
     }
 
+    @RequestMapping("goHtml1")
+    public String goHtml1(){
+        return "webSocket1.html";
+    }
+
 
     @Scheduled(cron = "0 0 0/5 * * ?")
     @Scheduled(cron = "0 30 2/5 * * ?")
