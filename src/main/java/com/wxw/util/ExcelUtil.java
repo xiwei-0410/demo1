@@ -1,3 +1,4 @@
+/*
 package com.wxw.util;
 
 import com.alibaba.fastjson.JSON;
@@ -27,9 +28,11 @@ public class ExcelUtil {
         //System.out.println(jsonArray);
     }
 
-    /**
+    */
+/**
      * 读取Excel测试，兼容 Excel 2003/2007/2010
-     */
+     *//*
+
     public static List<Map<String,Object>> readExcel()
     {
         List<Map<String,Object>> list = new ArrayList<>();
@@ -146,3 +149,4 @@ public class ExcelUtil {
 
 
 }
+*/
