@@ -71,25 +71,7 @@ public class Tset {
     /*********************************************java 8********************************************/
 
     public static void main(String[] args) {
-        List<Integer> list = Arrays.asList(1,2,3,4,5,6,7);
-
-        Optional<Integer> sum = list.stream().reduce(Integer::sum);
-        System.out.println("list求和:"+sum.get());
-        Optional<Integer> sum1 = list.stream().reduce((x,y)->x+y);
-        System.out.println("list求和:"+sum1.get());
-        Integer  sum2 = list.stream().reduce(0,Integer::sum);
-        System.out.println("list求和:"+sum2);
-
-        Optional<Integer> product  = list.stream().reduce((x,y)->x*y);
-        System.out.println("list求积："+product.get());
-
-        Optional<Integer> except  = list.stream().reduce((x,y)->x/y);
-        System.out.println("list除："+except.get());
-
-        Optional<Integer> max = list.stream().reduce((x,y)->x>y?x:y);
-        System.out.println("list最大值："+max);
-        Integer aa =  list.stream().reduce(1,Integer::max);
-        System.out.println("list最大值："+aa);
+        System.out.println("4-2.0-桶".split("-")[0]);
 
 
 

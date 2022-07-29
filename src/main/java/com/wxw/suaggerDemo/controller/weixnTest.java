@@ -39,5 +39,10 @@ public class weixnTest {
         System.out.println("定时时间======"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())+"==");
     }
 
+    @RequestMapping("saoyisao")
+    public String saoyisao(){
+        return  "saoyisao.html";
+    }
+
 
 }
