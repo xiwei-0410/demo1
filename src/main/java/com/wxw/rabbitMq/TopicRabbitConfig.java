@@ -1,4 +1,4 @@
-package com.wxw.util;
+package com.wxw.rabbitMq;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;

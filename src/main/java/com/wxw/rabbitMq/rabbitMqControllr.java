@@ -38,4 +38,11 @@ public class rabbitMqControllr {
         rabbitTemplate.convertAndSend("topicExchange", "topic.woman", "ccccccccccccccccccc");
         return "ok2";
     }
+
+    @RequestMapping("rabbitMq3")
+    @ResponseBody
+    public String  rabbitMq3(){
+        rabbitTemplate.convertAndSend("fanoutExchange", null, "ddddddddddddddddddddddddddddddddd");
+        return "ok2";
+    }
 }
