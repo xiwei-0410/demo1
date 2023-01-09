@@ -20,6 +20,7 @@ import java.util.Date;
 @EnableScheduling
 @Configuration
 public class weixnTest {
+    private static int _1MB = 1024 * 1024;
     private WebSocket websocket = new WebSocket();
 
     @RequestMapping("goHtml")
@@ -42,6 +43,23 @@ public class weixnTest {
     @RequestMapping("saoyisao")
     public String saoyisao(){
         return  "saoyisao.html";
+    }
+
+    @RequestMapping("/ceshijvm")
+    @ResponseBody
+    public Object ceshijvm(){
+        for (int i = 0; i < 20; i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    byte[] allocation1 = new byte[2 * _1MB];
+                    while (true) {
+                        System.out.println("============打印=========="+allocation1);
+                    }
+                }
+            }).start();
+        }
+        return 1;
     }
 
 

@@ -45,10 +45,10 @@ spring:
     port: 5672
     username: guest
     password: guest
-    #È·ÈÏÏûÏ¢ÒÑ·¢ËÍµ½½»»»»ú(Exchange)
-    #publisher-confirms: true
+    ## ç¡®è®¤æ¶ˆæ¯å·²å‘é€åˆ°äº¤æ¢æœº(Exchange)
+    ## publisher-confirms: true
     publisher-confirm-type: correlated
-    #È·ÈÏÏûÏ¢ÒÑ·¢ËÍµ½¶ÓÁĞ(Queue)
+    ## ç¡®è®¤æ¶ˆæ¯å·²å‘é€åˆ°é˜Ÿåˆ—(Queue)
     publisher-returns: true
 
 mybatis:
