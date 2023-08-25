@@ -53,7 +53,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mybatis/*Mapper.xml
-  type-aliases-package: com.wxw.suaggerDemo.model
+  type-aliases-package: com.mkl.suaggerDemo.model
 
 logging:
   level:

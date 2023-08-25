@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wxw.suaggerDemo.mapper.UserMapper">
+<mapper namespace="com.mkl.suaggerDemo.mapper.UserMapper">
 
-    <resultMap id="userState" type="com.wxw.suaggerDemo.model.User">
+    <resultMap id="userState" type="com.mkl.suaggerDemo.model.User">
         <result property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="phone" column="phone"/>
@@ -15,7 +15,7 @@
         <result property="isDeal" column="isDeal"/>
     </resultMap>
 
-    <resultMap id="gradeInfo" type="com.wxw.suaggerDemo.model.GradeInfo">
+    <resultMap id="gradeInfo" type="com.mkl.suaggerDemo.model.GradeInfo">
         <result property="id" column="id"/>
         <result property="grade" column="grade"/>
         <result property="delFlag" column="del_flag"/>
@@ -29,7 +29,7 @@
         select * from wxw_user where 1=1 and isDeal=0 and id =#{id}
     </select>
 
-    <insert id="save" parameterType="com.wxw.suaggerDemo.model.User" >
+    <insert id="save" parameterType="com.mkl.suaggerDemo.model.User" >
         insert into wxw_user (name,phone,sex,age,imgUrl,grade_id,isDeal)values (#{name},#{phone},#{sex},#{age},#{imgUrl},#{gradeId},0)
     </insert>
 
