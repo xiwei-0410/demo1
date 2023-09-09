@@ -10,10 +10,8 @@ import java.util.regex.Pattern;
 
 public class ImageUtil {
     public static int color_range = 210;
-    public static Pattern pattern = Pattern.compile("[0-9]*");
-
     public static void main(String[] args) {
-        convert("C:\\Users\\wxw\\Desktop\\111.jpg");
+        convert("C:\\Users\\wxw\\Desktop\\111.png");
     }
 
     public static void convert(String path) {

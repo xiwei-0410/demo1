@@ -11,66 +11,116 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ceshi {
-    public static void main(String[] args) {
-        String generateFile = null;
-        FileInputStream fs;
-        FileOutputStream out=null;
-        try {
-            fs = new FileInputStream("C:\\Users\\mkl\\Desktop\\111.xls");
-            //使用POI提供的方法得到excel的信息
-            HSSFWorkbook wb=new HSSFWorkbook(new POIFSFileSystem(fs));
-            HSSFSheet sheet=wb.getSheetAt(0);
-            HSSFCellStyle style = wb.createCellStyle();
-            //设置单元格格式为允许换行
-            style.setWrapText(true);
-            //设置水平对齐的样式为居中对齐;
-            style.setAlignment(HorizontalAlignment.CENTER);
-            style.setVerticalAlignment(VerticalAlignment.CENTER);
-            //设置单元格边框
-            style.setBorderLeft(BorderStyle.THIN);
-            style.setBorderBottom(BorderStyle.THIN);
-            style.setBorderTop(BorderStyle.THIN);
-            style.setBorderRight(BorderStyle.THIN);
-            // 设置字体
-            HSSFFont font = wb.createFont();
-            //设置字体大小
-            font.setFontHeightInPoints((short)11);
-            font.setFontName("宋体");
-            style.setFont(font);
-            //鉴定小组意见
-            sheet.getRow(8).getCell(1).setCellValue("同意上报集团公司物设部，申请报废。");
-            sheet.getRow(8).getCell(1).setCellStyle(style);
-            //鉴定小组签章
-            List<String> list = new ArrayList<>();
-            list.add("C:\\Users\\mkl\\Desktop\\tupian\\dzqz.png");
-            list.add("C:\\Users\\mkl\\Desktop\\tupian\\dzqz.png");
-            list.add("C:\\Users\\mkl\\Desktop\\tupian\\dzqz.png");
-            list.add("C:\\Users\\mkl\\Desktop\\tupian\\111.jpg");
-            list.add("C:\\Users\\mkl\\Desktop\\tupian\\111.jpg");
-            list.add("C:\\Users\\mkl\\Desktop\\tupian\\111.jpg");
 
-            createExcelInsertPicture(wb,list);
-            //输出
-            generateFile = "C:\\Users\\mkl\\Desktop\\aaa.xls";
-            out=new FileOutputStream(generateFile);
-            out.flush();
-            wb.write(out);
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
-            if (out != null) {
-                try {
-                    out.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+
+        public static List<Map<String, Object>> calculateSumWorkingHours(List<Map<String, Object>> list) {
+            Map<Integer, Double> sumMap = new HashMap<>();
+
+            list.forEach(map -> {
+                Integer deviceId = Integer.valueOf(map.get("deviceId").toString());
+                Double workingHours = Double.valueOf(map.get("workingHours").toString());
+
+                sumMap.put(deviceId, sumMap.getOrDefault(deviceId, 0.0) + workingHours);
+            });
+
+            list.forEach(map -> map.put("sumWorkingHours", sumMap.get(Integer.valueOf(map.get("deviceId").toString()))));
+
+            return list;
         }
-    }
+
+        public static void main(String[] args) {
+            List<Map<String, Object>> inputList = new ArrayList<>();
+            Map<String, Object> entry1 = new HashMap<>();
+            entry1.put("deviceId", 2297);
+            entry1.put("workingHours", "2.0");
+            inputList.add(entry1);
+
+            Map<String, Object> entry2 = new HashMap<>();
+            entry2.put("deviceId", 2297);
+            entry2.put("workingHours", "25.0");
+            inputList.add(entry2);
+
+            Map<String, Object> entry3 = new HashMap<>();
+            entry3.put("deviceId", 2297);
+            entry3.put("workingHours", "18.0");
+            inputList.add(entry3);
+
+            Map<String, Object> entry4 = new HashMap<>();
+            entry4.put("deviceId", 2403);
+            entry4.put("workingHours", 0);
+            inputList.add(entry4);
+
+            Map<String, Object> entry5 = new HashMap<>();
+            entry5.put("deviceId", 2406);
+            entry5.put("workingHours", 0);
+            inputList.add(entry5);
+
+            List<Map<String, Object>> result = calculateSumWorkingHours(inputList);
+            System.out.println(result);
+        }
+
+//    public static void main(String[] args) {
+//        String generateFile = null;
+//        FileInputStream fs;
+//        FileOutputStream out=null;
+//        try {
+//            fs = new FileInputStream("C:\\Users\\mkl\\Desktop\\111.xls");
+//            //使用POI提供的方法得到excel的信息
+//            HSSFWorkbook wb=new HSSFWorkbook(new POIFSFileSystem(fs));
+//            HSSFSheet sheet=wb.getSheetAt(0);
+//            HSSFCellStyle style = wb.createCellStyle();
+//            //设置单元格格式为允许换行
+//            style.setWrapText(true);
+//            //设置水平对齐的样式为居中对齐;
+//            style.setAlignment(HorizontalAlignment.CENTER);
+//            style.setVerticalAlignment(VerticalAlignment.CENTER);
+//            //设置单元格边框
+//            style.setBorderLeft(BorderStyle.THIN);
+//            style.setBorderBottom(BorderStyle.THIN);
+//            style.setBorderTop(BorderStyle.THIN);
+//            style.setBorderRight(BorderStyle.THIN);
+//            // 设置字体
+//            HSSFFont font = wb.createFont();
+//            //设置字体大小
+//            font.setFontHeightInPoints((short)11);
+//            font.setFontName("宋体");
+//            style.setFont(font);
+//            //鉴定小组意见
+//            sheet.getRow(8).getCell(1).setCellValue("同意上报集团公司物设部，申请报废。");
+//            sheet.getRow(8).getCell(1).setCellStyle(style);
+//            //鉴定小组签章
+//            List<String> list = new ArrayList<>();
+//            list.add("C:\\Users\\mkl\\Desktop\\tupian\\dzqz.png");
+//            list.add("C:\\Users\\mkl\\Desktop\\tupian\\dzqz.png");
+//            list.add("C:\\Users\\mkl\\Desktop\\tupian\\dzqz.png");
+//            list.add("C:\\Users\\mkl\\Desktop\\tupian\\111.jpg");
+//            list.add("C:\\Users\\mkl\\Desktop\\tupian\\111.jpg");
+//            list.add("C:\\Users\\mkl\\Desktop\\tupian\\111.jpg");
+//
+//            createExcelInsertPicture(wb,list);
+//            //输出
+//            generateFile = "C:\\Users\\mkl\\Desktop\\aaa.xls";
+//            out=new FileOutputStream(generateFile);
+//            out.flush();
+//            wb.write(out);
+//            out.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }finally {
+//            if (out != null) {
+//                try {
+//                    out.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//    }
 
     /**
      * 报废申请数插入图片

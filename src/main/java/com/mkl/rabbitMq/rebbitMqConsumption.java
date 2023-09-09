@@ -12,7 +12,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 //@RabbitListener(queues = "topic.man")
-@RabbitListener(queues = "fanout.A")
+//@RabbitListener(queues = "fanout.A")
+@RabbitListener(queues = "TestDirectQueue")
 public class rebbitMqConsumption {
     @RabbitHandler
     public void process(String map){
