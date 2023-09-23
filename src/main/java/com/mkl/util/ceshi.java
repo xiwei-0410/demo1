@@ -33,35 +33,72 @@ public class ceshi {
             return list;
         }
 
-        public static void main(String[] args) {
-            List<Map<String, Object>> inputList = new ArrayList<>();
-            Map<String, Object> entry1 = new HashMap<>();
-            entry1.put("deviceId", 2297);
-            entry1.put("workingHours", "2.0");
-            inputList.add(entry1);
+    /**
+     * 100被n平均分，如：
+     * 100被3平均分：34,33,33
+     * 100被13平均分：8,8,8,8,8,8,8,8,8,7,7,7,7
+     */
+    public static Double[] avg100(Double total, Integer number) {
 
-            Map<String, Object> entry2 = new HashMap<>();
-            entry2.put("deviceId", 2297);
-            entry2.put("workingHours", "25.0");
-            inputList.add(entry2);
+        Double[] result = new Double[number];
+        Double value = total / number;
 
-            Map<String, Object> entry3 = new HashMap<>();
-            entry3.put("deviceId", 2297);
-            entry3.put("workingHours", "18.0");
-            inputList.add(entry3);
+        Double index = total - (value * number);
 
-            Map<String, Object> entry4 = new HashMap<>();
-            entry4.put("deviceId", 2403);
-            entry4.put("workingHours", 0);
-            inputList.add(entry4);
+        for (int i = 0; i < number; i++) {
+            if (i < index) {
+                result[i] = value + 1;
+            } else {
+                result[i] = value;
+            }
+        }
 
-            Map<String, Object> entry5 = new HashMap<>();
-            entry5.put("deviceId", 2406);
-            entry5.put("workingHours", 0);
-            inputList.add(entry5);
+        return result;
+    }
 
-            List<Map<String, Object>> result = calculateSumWorkingHours(inputList);
-            System.out.println(result);
+
+    public static void main(String[] args) {
+        Double[] result = avg100(102.00,13);
+        Double total = 0.00;
+
+        for (Double integer : result) {
+            System.out.print(integer);
+            System.out.print(",");
+        }
+
+        System.out.println();
+        for (Double value : result) {
+            total += value;
+        }
+        System.out.println(total);
+//            List<Map<String, Object>> inputList = new ArrayList<>();
+//            Map<String, Object> entry1 = new HashMap<>();
+//            entry1.put("deviceId", 2297);
+//            entry1.put("workingHours", "2.0");
+//            inputList.add(entry1);
+//
+//            Map<String, Object> entry2 = new HashMap<>();
+//            entry2.put("deviceId", 2297);
+//            entry2.put("workingHours", "25.0");
+//            inputList.add(entry2);
+//
+//            Map<String, Object> entry3 = new HashMap<>();
+//            entry3.put("deviceId", 2297);
+//            entry3.put("workingHours", "18.0");
+//            inputList.add(entry3);
+//
+//            Map<String, Object> entry4 = new HashMap<>();
+//            entry4.put("deviceId", 2403);
+//            entry4.put("workingHours", 0);
+//            inputList.add(entry4);
+//
+//            Map<String, Object> entry5 = new HashMap<>();
+//            entry5.put("deviceId", 2406);
+//            entry5.put("workingHours", 0);
+//            inputList.add(entry5);
+//
+//            List<Map<String, Object>> result = calculateSumWorkingHours(inputList);
+//            System.out.println(result);
         }
 
 //    public static void main(String[] args) {
